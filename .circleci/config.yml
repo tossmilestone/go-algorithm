@@ -11,4 +11,5 @@ jobs:
     steps:
       - checkout
 
+      - run: make setup
       - run: make ci
