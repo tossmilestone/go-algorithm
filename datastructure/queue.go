@@ -18,7 +18,7 @@ func NewQueue(size int) *Queue {
 	}
 }
 
-// Enqueue eject an object from the head of the queue
+// Enqueue get and remove an object from the head of the queue
 func (q *Queue) Enqueue(e int) error {
 	tail := (q.tail + 1) % (q.Capacity + 1)
 	if tail == q.head {
@@ -29,7 +29,7 @@ func (q *Queue) Enqueue(e int) error {
 	return nil
 }
 
-// Dequeue push an object into the tail of the queue
+// Dequeue insert an object into the tail of the queue
 func (q *Queue) Dequeue() (int, error) {
 	if q.head == q.tail {
 		return 0, errors.New("queue is empty")
