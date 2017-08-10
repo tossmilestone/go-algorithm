@@ -18,7 +18,7 @@ func NewStack(capacity int) *Stack {
 
 // Push insert an object into the stack
 func (s *Stack)Push(e int) error {
-	if s.top >= len(s.data) {
+	if s.top + 1 >= len(s.data) {
 		return errors.New("stack is full")
 	}
 
@@ -54,6 +54,6 @@ func (s *Stack)IsEmpty() bool {
 
 // IsFull return if the stack is full
 func (s *Stack)IsFull() bool {
-	return s.top == len(s.data)
+	return (s.top + 1) == len(s.data)
 }
 
