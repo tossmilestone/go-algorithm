@@ -5,3 +5,9 @@
 ### All algorithms implemented in Golang (for exercise)
 
 These implementations are exercises for Golang programming.
+
+#### Data Structures
+
+- Queue
+- Stack
+- Linked List
