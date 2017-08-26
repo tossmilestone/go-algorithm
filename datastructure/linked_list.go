@@ -46,19 +46,25 @@ func (l *LinkedList) Append(data interface{}) {
 // Remove delete a LinkedListNode at given index in the list
 func (l *LinkedList) Remove(index int) (interface{}, error) {
 	if index < 0 || index >= l.len {
-		return 0, errors.New("index is out of range")
+		return nil, errors.New("index is out of range")
 	}
 
 	i := 0
 	found := l.Head
-	pre := l.Head
+	var pre *LinkedListNode
+	pre = nil
 	for i < index {
 		i++
 		pre = found
 		found = found.Next
 	}
-	pre.Next = found.Next
-	found.Next = nil
+	if found == l.Head {
+		l.Head = found.Next
+	} else {
+		pre.Next = found.Next
+		found.Next = nil
+	}
+	l.len--
 	return found.Data, nil
 }
 
