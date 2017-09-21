@@ -15,3 +15,4 @@ These implementations are exercises for Golang programming.
 #### Sort
 
 - Bubble Sort
+- Quick Sort
